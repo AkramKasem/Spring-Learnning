@@ -1,14 +1,12 @@
-package Runnig;
+package IOC_Container;
 
 import org.springframework.context.support.ClassPathXmlApplicationContext;
-
-import IOC_Container.Car;
 
 public class Run {
 
 	public static void main(String[] args) {
 
-		ClassPathXmlApplicationContext context =  new ClassPathXmlApplicationContext("context.xml");
+		ClassPathXmlApplicationContext context =  new ClassPathXmlApplicationContext("IOC_Container/contextIOC.xml");
 		
 		Car c = context.getBean("MyCarA",Car.class);
 		c.display();
