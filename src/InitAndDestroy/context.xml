@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans.xsd
+    http://www.springframework.org/schema/context
+    http://www.springframework.org/schema/context/spring-context.xsd">
+
+
+
+
+	<bean id="MyPersonConstructor"   class="InitAndDestroy.Person" scope="singleton">
+		<constructor-arg name="adress" value="Akram Kasem"></constructor-arg>
+		<constructor-arg name="name" value="Ibrah"></constructor-arg>
+		<constructor-arg name="phone" value="+201062782660"></constructor-arg>
+		<constructor-arg name="familyMember">
+			<list >
+				<value>Akram</value>
+				<value>Ahmed</value>
+				<value>Ashraf</value>
+				<value>Kasem</value>
+			</list>
+		</constructor-arg>
+	</bean>
+
+	<bean id="MyUserConstructor" class="InitAndDestroy.User" init-method="Start" destroy-method="End" scope="singleton">
+		<constructor-arg ref="MyPersonConstructor"></constructor-arg>
+		<constructor-arg value="200"></constructor-arg>
+	</bean>
+ 
+
+	
+
+	
+
+</beans>
